@@ -1,6 +1,6 @@
-import Carousel from "../components/home/Carousel";
-import CounterSection from "../components/home/CounterSection";
-import TeamSection from "../components/home/TeamSection";
+import Carousel from "../layout/components/home/Carousel";
+import CounterSection from "../layout/components/home/CounterSection";
+import TeamSection from "../layout/components/home/TeamSection";
 
 const Home = () => {
   return (
