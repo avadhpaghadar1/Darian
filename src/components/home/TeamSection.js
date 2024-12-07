@@ -1,27 +1,27 @@
 import React from "react";
 import { Box, Grid, Typography, IconButton, Card, CardMedia, CardContent, Container } from "@mui/material";
-import { Facebook, Twitter, LinkedIn, Instagram } from "@mui/icons-material";
+import { Facebook, Phone } from "@mui/icons-material";
 import teamOne from "../../Vendors/image/team-1.jpg";
 import teamTwo from "../../Vendors/image/team-2.jpg";
 import teamThree from "../../Vendors/image/team-3.jpg";
 import teamFour from "../../Vendors/image/team-4.jpg";
 
 const teamMembers = [
-  { name: "Dipesh Bhuva", role: "CFO & Founder", imgSrc: teamOne, delay: "0.2s" },
-  { name: "Pritesh Bhuva", role: "CEO", imgSrc: teamTwo, delay: "0.4s" },
-  { name: "Ankit Vaghasiya", role: "CIO", imgSrc: teamThree, delay: "0.6s" },
-  { name: "Gopal Boghra", role: "COO", imgSrc: teamFour, delay: "0.8s" },
+  { name: "Dipesh Bhuva", role: "CFO & Founder", imgSrc: teamOne, delay: "0.2s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
+  { name: "Pritesh Bhuva", role: "CEO", imgSrc: teamTwo, delay: "0.4s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
+  { name: "Ankit Vaghasiya", role: "CIO", imgSrc: teamThree, delay: "0.6s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
+  { name: "Gopal Boghra", role: "COO", imgSrc: teamFour, delay: "0.8s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
 ];
 
 const TeamSection = () => {
   return (
-    <Box sx={{ py: 5 }}>
+    <Box sx={{ py: 10 }}>
       <Container>
-        <Box sx={{ textAlign: 'center', mb: 5 }}>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography variant="h4" color="primary" sx={{ textTransform: 'uppercase' }}>
             Our Team
           </Typography>
-          <Typography variant="h4" sx={{ mb: 3, textTransform: 'capitalize' }}>
+          <Typography variant="h5" sx={{ mb: 3, textTransform: 'capitalize' }}>
             What is Really SEO & How Can I Use It?
           </Typography>
         </Box>
@@ -83,17 +83,11 @@ const TeamSection = () => {
                     opacity: 0,
                   }}
                 >
-                  <IconButton sx={{ bgcolor: 'primary.main', color: 'white' }}>
+                  <IconButton href={member.phone} sx={{ bgcolor: 'primary.main', color: 'white' }}>
+                    <Phone />
+                  </IconButton>
+                  <IconButton href={member.facebook} sx={{ bgcolor: 'primary.main', color: 'white' }}>
                     <Facebook />
-                  </IconButton>
-                  <IconButton sx={{ bgcolor: 'primary.main', color: 'white' }}>
-                    <Twitter />
-                  </IconButton>
-                  <IconButton sx={{ bgcolor: 'primary.main', color: 'white' }}>
-                    <LinkedIn />
-                  </IconButton>
-                  <IconButton sx={{ bgcolor: 'primary.main', color: 'white' }}>
-                    <Instagram />
                   </IconButton>
                 </Box>
                 {/* Team Member Info */}

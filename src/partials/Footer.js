@@ -23,14 +23,14 @@ const Footer = () => {
       <Container maxWidth="lg">
         {/* Subscription Section */}
         <Grid container spacing={5} alignItems="center" mb={5}>
-          <Grid item xs={12} md={5}>
+          {/* <Grid item xs={12} md={5}>
             <Box
               display="flex"
               justifyContent={{ xs: "center", md: "flex-end" }}
               className="text-gray"
             >
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -44,7 +44,7 @@ const Footer = () => {
                 <FacebookIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -58,7 +58,7 @@ const Footer = () => {
                 <TwitterIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -72,7 +72,7 @@ const Footer = () => {
                 <InstagramIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -86,7 +86,7 @@ const Footer = () => {
                 <LinkedInIcon />
               </IconButton>
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         {/* Footer Content */}
@@ -97,11 +97,73 @@ const Footer = () => {
             <Typography
               variant="body2"
               gutterBottom
-              sx={{ lineHeight: "35px", color: "var(--bs-body)" }}
+              sx={{ lineHeight: "35px", color: "white" }}
             >
               Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum
               dolor sit amet, consectetur adipiscing elit.
             </Typography> 
+            <Box
+              display="flex"
+              justifyContent={{ xs: "flex-start", md: "flex-start" }}
+              className="text-gray"
+            >
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <TwitterIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <InstagramIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </Box>
           </Grid>
 
           {/* Column 2: About Us Links */}
@@ -124,7 +186,7 @@ const Footer = () => {
                   sx={{
                     display: "block",
                     lineHeight: "35px",
-                    color: "var(--bs-body)",
+                    color: "white",
                     transition: "0.5s",
                     mb: 1,
                     "&:hover": {
@@ -176,19 +238,17 @@ const Footer = () => {
               Contact Info
             </Typography>
             {[
-              { icon: "fa-map-marker-alt", text: "123 Street, New York, USA" },
-              { icon: "fas fa-envelope", text: "info@example.com" },
-              { icon: "fas fa-envelope", text: "info@example.com" },
-              { icon: "fas fa-phone", text: "+012 345 67890" },
-              { icon: "fas fa-print", text: "+012 345 67890" },
+              { icon: "fa-map-marker-alt",link:"#", text: "123 Street, New York, USA" },
+              { icon: "fas fa-envelope",link:"mailto:info@darian.com", text: "info@darian.com" },
+              { icon: "fas fa-phone",link:"tel:6354273453", text: "+91 63542 73453" },
             ].map((item, index) => (
               <Link
-                href="#"
+                href={item.link}
                 key={index}
                 sx={{
                   display: "block",
                   lineHeight: "35px",
-                  color: "var(--bs-body)",
+                  color: "white",
                   transition: "0.5s",
                   mb: 1,
                   "&:hover": {
@@ -217,7 +277,7 @@ const Footer = () => {
           <Typography
             variant="body2"
             align="center"
-            sx={{ color: "var(--bs-body)" }}
+            sx={{ color: "white" }}
           >
             © {currentYear} Darian | All Rights Reserved.
           </Typography>

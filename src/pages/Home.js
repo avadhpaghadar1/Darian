@@ -1,14 +1,24 @@
-import Carousel from "../layout/components/home/Carousel";
-import CounterSection from "../layout/components/home/CounterSection";
-import TeamSection from "../layout/components/home/TeamSection";
+// import { Helmet } from 'react-helmet-async';
+import Carousel from "../components/home/Carousel";
+import CounterSection from "../components/home/CounterSection";
+import Features from "../components/home/Features";
+import TeamSection from "../components/home/TeamSection";
+import ProductSection from "../components/ProductSection";
 
 const Home = () => {
   return (
-    <div>
-      <Carousel/>
-      <TeamSection/>
-      <CounterSection/>
-    </div>
+    <>
+      {/* <Helmet>
+        <title> Dashboard: Four</title>
+      </Helmet> */}
+      <div>
+        <Carousel />
+        <TeamSection />
+        <CounterSection />
+        <Features />
+        <ProductSection />
+      </div>
+    </>
   )
 };
 

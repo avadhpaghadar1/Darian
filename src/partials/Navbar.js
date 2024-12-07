@@ -51,14 +51,13 @@ const Navbar = () => {
         boxShadow: scrolled ? '0px 2px 4px rgba(0, 0, 0, 0.1)' : 'none',
         transition: 'background-color 0.3s ease, box-shadow 0.3s ease', 
         padding: '10px 20px',
-        borderBottom: '1px solid #ddd',
         color: scrolled ? 'black' : 'white',
       }}
     >
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         {/* Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <img src={logo} alt="Logo" style={{ height: 70 }} />
+          <img src={logo} alt="Logo" style={{ height: 75 }} />
         </Box>
 
         {/* Menu for mobile and desktop */}
@@ -79,7 +78,7 @@ const Navbar = () => {
                   position: "absolute",
                   top: "64px",
                   right: 0,
-                  backgroundColor: "white",
+                  backgroundColor: "transparant",
                   zIndex: 999,
                   width: '100%',
                   display: 'flex',
@@ -88,10 +87,11 @@ const Navbar = () => {
                 }}
               >
                 <Button sx={{ justifyContent: 'left' }} color="inherit" href="index.html">Home</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="about.html">About</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="service.html">Service</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="blog.html">Blog</Button>
-                <Button sx={{ justifyContent: 'left' }} aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
+                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/bottle">Insulated Bottle</Button>
+                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/product">Other Product</Button>
+                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/about">About Us</Button>
+                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/contact">Contact Us</Button>
+                {/* <Button sx={{ justifyContent: 'left' }} aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
                   Pages
                 </Button>
                 <Menu
@@ -116,17 +116,17 @@ const Navbar = () => {
                   <MenuItem onClick={handleMenuClose} component="a" href="404.html">
                     404 Page
                   </MenuItem>
-                </Menu>
+                </Menu> */}
               </Box>
             )}
           </>
         ) : (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Button color="inherit" href="">Home</Button>
-            <Button color="inherit" href="about.html">About</Button>
-            <Button color="inherit" href="service.html">Service</Button>
-            <Button color="inherit" href="blog.html">Blog</Button>
-            <Button aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
+            <Button color="inherit" href="/">Home</Button>
+            <Button color="inherit" href="bottle">Insulated Bottles</Button>
+            <Button color="inherit" href="product">Other Product</Button>
+            <Button color="inherit" href="/about">About Us</Button>
+            {/* <Button aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
               Pages
             </Button>
             <Menu
@@ -151,8 +151,8 @@ const Navbar = () => {
               <MenuItem onClick={handleMenuClose} component="a" href="404.html">
                 404 Page
               </MenuItem>
-            </Menu>
-            <Button color="inherit" href="contact.html">Contact</Button>
+            </Menu> */}
+            <Button color="inherit" href="/contact">Contact Us</Button>
           </Box>
         )}
       </Toolbar>
