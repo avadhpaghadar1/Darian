@@ -1,9 +1,12 @@
 import { Typography } from "@mui/material";
+import Banner from "../components/common/Banner";
 
 const ContactUs = () => {
   return (
     <div>
-      <Typography sx={{fontSize:24,marginY:20,marginLeft:15}}>Contact Us</Typography>
+     <Banner
+        title="Contact Us"
+      />
     </div>
   )
 };

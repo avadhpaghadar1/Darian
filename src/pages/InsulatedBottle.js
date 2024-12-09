@@ -1,9 +1,12 @@
 import { Typography } from "@mui/material";
+import Banner from "../components/common/Banner";
 
 const InsulatedBottle = () => {
   return (
     <div>
-        <Typography sx={{fontSize:24,marginY:20,marginLeft:15}}>Insulated Bottle</Typography>
+        <Banner
+        title="Insulated Bottle"
+      />
     </div>
   )
 };
