@@ -17,10 +17,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <Box
-      sx={{ bgcolor: "var(--bs-dark)", py: 5, color: "var(--bs-body)" }}
+      sx={{ bgcolor: "#0a244f", py: 5, color: "var(--bs-body)" }}
       className="footer"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{py:3}}>
         {/* Subscription Section */}
         <Grid container spacing={5} alignItems="center" mb={5}>
           {/* <Grid item xs={12} md={5}>
@@ -169,16 +169,15 @@ const Footer = () => {
           {/* Column 2: About Us Links */}
           <Grid item xs={12} md={3}>
             <Typography variant="h6" gutterBottom sx={{ color: "white" }}>
-              About Us
+              Pages
             </Typography>
             <Box>
               {[
-                "Why Choose Us",
-                "Free Water Bottles",
-                "Water Dispensers",
-                "Bottled Water Coolers",
+                "Home",
+                "Insulated Bottles",
+                "Other Product",
+                "About Us",
                 "Contact Us",
-                "Terms & Conditions",
               ].map((text, index) => (
                 <Link
                   href="#"
@@ -188,7 +187,7 @@ const Footer = () => {
                     lineHeight: "35px",
                     color: "white",
                     transition: "0.5s",
-                    mb: 1,
+                    textDecoration:"none",
                     "&:hover": {
                       letterSpacing: "1px",
                       color: "var(--bs-primary)",
@@ -207,7 +206,7 @@ const Footer = () => {
               Business Hours
             </Typography>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Mon - Friday:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -215,7 +214,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Saturday:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -223,7 +222,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Vacation:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -238,8 +237,8 @@ const Footer = () => {
               Contact Info
             </Typography>
             {[
-              { icon: "fa-map-marker-alt",link:"#", text: "123 Street, New York, USA" },
-              { icon: "fas fa-envelope",link:"mailto:info@darian.com", text: "info@darian.com" },
+              { icon: "fa-map-marker-alt",link:"#", text: "Victoria Industrial Park, 17, Rd Number 5, near Kotak Mahindra Bank, Kathwada GIDC, Odhav Industrial Estate, Odhav, Ahmedabad, Kathwada, Gujarat 382430" },
+              { icon: "fas fa-envelope",link:"mailto:info@darianindustries.com", text: "info@darianindustries.com" },
               { icon: "fas fa-phone",link:"tel:6354273453", text: "+91 63542 73453" },
             ].map((item, index) => (
               <Link
@@ -247,10 +246,11 @@ const Footer = () => {
                 key={index}
                 sx={{
                   display: "block",
-                  lineHeight: "35px",
+                  lineHeight: "20px",
                   color: "white",
                   transition: "0.5s",
-                  mb: 1,
+                  textDecoration:"none",
+                  mb: 2,
                   "&:hover": {
                     letterSpacing: "1px",
                     color: "var(--bs-primary)",
@@ -267,7 +267,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <Box
         sx={{
-          bgcolor: "var(--bs-dark)",
+          bgcolor: "#0a244f",
           pt: 4,
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         }}

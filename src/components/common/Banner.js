@@ -14,7 +14,6 @@ const Banner = ({ title, subtitle, titleTypography, subtitleTypography }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "400px",
             }}
         >
             <Box

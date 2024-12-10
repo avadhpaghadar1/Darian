@@ -86,7 +86,7 @@ const Navbar = () => {
                   alignItems: 'flex-start',
                 }}
               >
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="index.html">Home</Button>
+                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/">Home</Button>
                 <Button sx={{ justifyContent: 'left' }} color="inherit" href="/bottle">Insulated Bottle</Button>
                 <Button sx={{ justifyContent: 'left' }} color="inherit" href="/product">Other Product</Button>
                 <Button sx={{ justifyContent: 'left' }} color="inherit" href="/about">About Us</Button>
@@ -123,8 +123,8 @@ const Navbar = () => {
         ) : (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Button color="inherit" href="/">Home</Button>
-            <Button color="inherit" href="bottle">Insulated Bottles</Button>
-            <Button color="inherit" href="product">Other Product</Button>
+            <Button color="inherit" href="/bottle">Insulated Bottles</Button>
+            <Button color="inherit" href="/product">Other Product</Button>
             <Button color="inherit" href="/about">About Us</Button>
             {/* <Button aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
               Pages
