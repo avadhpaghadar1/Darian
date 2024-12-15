@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import { Box } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import logo from '../Vendors/image/logo.png';
+import logo from "../Vendors/image/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const location = useLocation();
 
-  // Handle scroll event
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -34,33 +29,33 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  const menuItems = [
+    { label: "Home", link: "/" },
+    { label: "Bottle", link: "/product" },
+    { label: "Insulated Bottle", link: "/bottle" },
+    { label: "About", link: "/about" },
+    { label: "Contact", link: "/contact" },
+  ];
 
   return (
     <AppBar
       position="fixed"
-      color="default"
       sx={{
-        backgroundColor: scrolled ? 'white' : 'transparent', 
-        boxShadow: scrolled ? '0px 2px 4px rgba(0, 0, 0, 0.1)' : 'none',
-        transition: 'background-color 0.3s ease, box-shadow 0.3s ease', 
-        padding: '10px 20px',
-        color: scrolled ? 'black' : 'white',
+        backgroundColor: scrolled ? "#fff" : "#0a244f",
+        boxShadow: scrolled ? "0px 2px 4px rgba(0, 0, 0, 0.1)" : "none",
+        transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+        padding: "10px 20px",
+        color: scrolled ? "#102a43" : "#fff",
+        zIndex: 1100,
+        textTransform: "uppercase",
       }}
     >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         {/* Logo */}
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <img src={logo} alt="Logo" style={{ height: 75 }} />
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <img src={logo} alt="Logo" style={{ height: 80 }} />
         </Box>
 
-        {/* Menu for mobile and desktop */}
         {isMobile ? (
           <>
             <IconButton
@@ -68,91 +63,81 @@ const Navbar = () => {
               color="inherit"
               aria-label="menu"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              sx={{ ml: 'auto' }}
             >
               <MenuIcon />
             </IconButton>
+
             {mobileMenuOpen && (
               <Box
                 sx={{
                   position: "absolute",
-                  top: "64px",
-                  right: 0,
-                  backgroundColor: "transparant",
-                  zIndex: 999,
-                  width: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
+                  top: "90px",
+                  left: 0,
+                  right:0,
+                  width: "100%",
+                  backgroundColor: "#0a244f",
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                  // zIndex: 1200,
                 }}
               >
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/">Home</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/bottle">Insulated Bottle</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/product">Other Product</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/about">About Us</Button>
-                <Button sx={{ justifyContent: 'left' }} color="inherit" href="/contact">Contact Us</Button>
-                {/* <Button sx={{ justifyContent: 'left' }} aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
-                  Pages
-                </Button>
-                <Menu
-                  id="pages-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                >
-                  <MenuItem onClick={handleMenuClose} component="a" href="feature.html">
-                    Our Feature
-                  </MenuItem>
-                  <MenuItem onClick={handleMenuClose} component="a" href="product.html">
-                    Our Product
-                  </MenuItem>
-                  <MenuItem onClick={handleMenuClose} component="a" href="team.html">
-                    Our Team
-                  </MenuItem>
-                  <MenuItem onClick={handleMenuClose} component="a" href="testimonial.html">
-                    Testimonial
-                  </MenuItem>
-                  <MenuItem onClick={handleMenuClose} component="a" href="404.html">
-                    404 Page
-                  </MenuItem>
-                </Menu> */}
+                {menuItems.map((item, index) => (
+                  <Button
+                    key={index}
+                    href={item.link}
+                    sx={{
+                      display: "block",
+                      width: "100%",
+                      textAlign: "left",
+                      padding: "10px 20px",
+                      backgroundColor: "#0a244f",
+                      color: location.pathname === item.link ? "#00c8ff" : "#fff",
+                      fontWeight: location.pathname === item.link ? "bold" : "normal",
+                      textTransform: "uppercase",
+                      "&:hover": { backgroundColor: "#2b496a" },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                ))}
               </Box>
             )}
           </>
         ) : (
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Button color="inherit" href="/">Home</Button>
-            <Button color="inherit" href="/bottle">Insulated Bottles</Button>
-            <Button color="inherit" href="/product">Other Product</Button>
-            <Button color="inherit" href="/about">About Us</Button>
-            {/* <Button aria-controls="pages-menu" aria-haspopup="true" onClick={handleMenuOpen} color="inherit">
-              Pages
-            </Button>
-            <Menu
-              id="pages-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              <MenuItem onClick={handleMenuClose} component="a" href="feature.html">
-                Our Feature
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose} component="a" href="product.html">
-                Our Product
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose} component="a" href="team.html">
-                Our Team
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose} component="a" href="testimonial.html">
-                Testimonial
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose} component="a" href="404.html">
-                404 Page
-              </MenuItem>
-            </Menu> */}
-            <Button color="inherit" href="/contact">Contact Us</Button>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            {menuItems.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  position: "relative",
+                  display: "inline-block",
+                  "&:hover > .after": {
+                    opacity: 1,
+                  },
+                }}
+              >
+                <Link
+                  to={item.link}
+                  style={{
+                    color:
+                      location.pathname === item.link
+                        ? "#00c8ff"
+                        : scrolled
+                        ? "#102a43"
+                        : "#fff",
+                    textDecoration: "none",
+                    fontSize: "16px",
+                    fontWeight: location.pathname === item.link ? "bold" : "500",
+                    position: "relative",
+                    padding: "10px 15px",
+                    // backgroundColor: scrolled ? "#f5f5f5" : "#1c3b57",
+                    borderRadius: "4px",
+                    transition: "background-color 0.3s ease, color 0.3s ease",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              </Box>
+            ))}
           </Box>
         )}
       </Toolbar>

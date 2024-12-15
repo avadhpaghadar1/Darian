@@ -189,7 +189,6 @@ const Footer = () => {
                     transition: "0.5s",
                     textDecoration:"none",
                     "&:hover": {
-                      letterSpacing: "1px",
                       color: "var(--bs-primary)",
                     },
                   }}
@@ -252,7 +251,6 @@ const Footer = () => {
                   textDecoration:"none",
                   mb: 2,
                   "&:hover": {
-                    letterSpacing: "1px",
                     color: "var(--bs-primary)",
                   },
                 }}
