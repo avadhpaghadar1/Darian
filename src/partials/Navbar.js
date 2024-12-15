@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="fixed"
+      position="sticky"
       sx={{
         backgroundColor: scrolled ? "#fff" : "#0a244f",
         boxShadow: scrolled ? "0px 2px 4px rgba(0, 0, 0, 0.1)" : "none",
@@ -70,14 +70,14 @@ const Navbar = () => {
             {mobileMenuOpen && (
               <Box
                 sx={{
-                  position: "absolute",
+                  position: "fixed",
                   top: "90px",
                   left: 0,
                   right:0,
                   width: "100%",
                   backgroundColor: "#0a244f",
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                  // zIndex: 1200,
+                  zIndex: 1200,
                 }}
               >
                 {menuItems.map((item, index) => (

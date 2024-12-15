@@ -199,7 +199,7 @@ const Contact = () => {
                   borderRadius: "8px",
                   backgroundColor: "white",
                   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-                  textAlign: "left",
+                  textAlign: "center",
                   marginTop: { xs: "20px", sm: "0px" }, 
                 }}
               >
@@ -213,11 +213,12 @@ const Contact = () => {
                       fontWeight: "bold",
                       color: "#0a244f",
                       marginBottom: "5px",
+                      textAlign: "left",
                     }}
                   >
                     Address
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "#6c757d" }}>
+                  <Typography variant="body2" sx={{ color: "#6c757d", textAlign: "left",}}>
                     Victoria Industrial Park, 17, Rd Number 5, Kathwada,
                     Gujarat 382430
                   </Typography>
@@ -247,6 +248,7 @@ const Contact = () => {
                       fontWeight: "bold",
                       color: "#0a244f",
                       marginBottom: "5px",
+                      textAlign: "left",
                     }}
                   >
                     Mail Us
@@ -268,6 +270,7 @@ const Contact = () => {
                   borderRadius: "8px",
                   backgroundColor: "white",
                   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                  textAlign: "left",
                 }}
               >
                 <Phone

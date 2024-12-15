@@ -12,27 +12,25 @@ import {
 import bottleOne from "../Vendors/image/bottle/image_one.jpg";
 import bottleTwo from "../Vendors/image/bottle/image_two.jpg";
 import bottleThree from "../Vendors/image/bottle/image_three.jpg";
+import { Link } from "react-router-dom";
 
 const bottles = [
   {
     id: 1,
     size: "2L 1 Bottle",
     name: "Mineral Water Bottle",
-    price: "₹35.00",
     image: bottleOne,
   },
   {
     id: 2,
     size: "4L 2 Bottles",
     name: "RO Water Bottle",
-    price: "₹70.00",
     image: bottleTwo,
   },
   {
     id: 3,
     size: "6L 3 Bottles",
     name: "UV Water Bottle",
-    price: "₹100.00",
     image: bottleThree,
   },
 ];
@@ -81,15 +79,10 @@ const ProductSection = () => {
                   >
                     {bottle.name}
                   </Typography>
-                  <Typography
-                    variant="h6"
-                    fontWeight="bold"
-                    sx={{ color: "#007bff", mb: 2 }}
-                  >
-                    {bottle.price}
-                  </Typography>
                   <Button
                     variant="contained"
+                    component={Link}
+                    to="/product"
                     sx={{
                       backgroundColor: "#002855",
                       "&:hover": {
@@ -97,7 +90,7 @@ const ProductSection = () => {
                       },
                     }}
                   >
-                    Read More
+                    View More
                   </Button>
                 </CardContent>
               </Card>

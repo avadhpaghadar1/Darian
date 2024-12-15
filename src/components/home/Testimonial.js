@@ -1,42 +1,39 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  Avatar,
-  Grid,
-  IconButton,
-  Rating,
-  Container,
-} from "@mui/material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import profileOne from "../../Vendors/image/team-1.jpg";
-import profileTwo from "../../Vendors/image/team-2.jpg";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Client Name",
-    profession: "Profession",
-    review:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.",
-    avatar: profileOne,
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Client Name",
-    profession: "Profession",
-    review:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.",
-    avatar: profileTwo,
-    rating: 5,
-  },
-];
+import React, { useState } from "react";
+import { Box, Typography, Rating, Container } from "@mui/material";
+import Slider from "react-slick";
+import { testimonials } from "../../Vendors/reviews";
 
 const Testimonial = () => {
+  const [reviews] = useState(testimonials);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Box sx={{  paddingY: "6rem", backgroundColor: "#f4f9fc" }}>
+    <Box sx={{ paddingY: "6rem" }}>
       <Container maxWidth="lg">
         {/* Section Header */}
         <Typography
@@ -63,18 +60,27 @@ const Testimonial = () => {
           Our Clients Reviews.
         </Typography>
 
-        {/* Testimonials Grid */}
-        <Grid container spacing={4} justifyContent="center">
-          {testimonials.map((testimonial) => (
-            <Grid item xs={12} sm={6} key={testimonial.id}>
+        {/* Slider / Carousel */}
+        <Slider
+          {...settings}
+          className="testimonial-slider" // Add a unique class name here
+          style={{
+            margin: "0 auto",
+            padding: "10px 0",
+          }}
+        >
+          {reviews.length > 0 ? (
+            reviews.map((review, index) => (
               <Box
+                key={index}
                 sx={{
                   textAlign: "center",
                   border: "1px solid #e0e0e0",
                   borderRadius: 4,
-                  padding: 3,
+                  padding: 4,
                   backgroundColor: "#ffffff",
-                  boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+                  boxSizing: "border-box",
+                  margin: "0 15px", // Adjust the margin between slides
                 }}
               >
                 <Typography
@@ -86,18 +92,8 @@ const Testimonial = () => {
                     lineHeight: 1.8,
                   }}
                 >
-                  {testimonial.review}
+                  {review.review}
                 </Typography>
-                <Avatar
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  sx={{
-                    width: 90,
-                    height: 90,
-                    margin: "0 auto",
-                    border: "3px solid #007bff",
-                  }}
-                />
                 <Typography
                   variant="h6"
                   sx={{
@@ -107,56 +103,44 @@ const Testimonial = () => {
                     fontSize: "1.1rem",
                   }}
                 >
-                  {testimonial.name}
+                  {review.name}
                 </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ color: "#6c757d", mb: 1, fontSize: "0.9rem" }}
-                >
-                  {testimonial.profession}
-                </Typography>
-                <Rating
-                  value={testimonial.rating}
-                  readOnly
-                  sx={{ color: "#007bff" }}
-                />
+                <Rating value={review.rating} readOnly sx={{ color: "#007bff" }} />
               </Box>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Navigation Buttons */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            mt: 4,
-          }}
-        >
-          <IconButton
-            sx={{
-              color: "#007bff",
-              backgroundColor: "#e7f5ff",
-              "&:hover": { backgroundColor: "#d0ebff" },
-              borderRadius: "50%",
-            }}
-          >
-            <ArrowBackIosIcon />
-          </IconButton>
-          <IconButton
-            sx={{
-              color: "#007bff",
-              backgroundColor: "#e7f5ff",
-              "&:hover": { backgroundColor: "#d0ebff" },
-              borderRadius: "50%",
-              ml: 2,
-            }}
-          >
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </Box>
+            ))
+          ) : (
+            <Typography variant="h6" sx={{ textAlign: "center", color: "#6c757d" }}>
+              No reviews available.
+            </Typography>
+          )}
+        </Slider>
       </Container>
+
+      {/* Scoped Styles using the unique class name */}
+      <style>
+        {`
+          /* Target only the testimonial slider */
+          .testimonial-slider .slick-slider {
+            padding: 0 15px;
+          }
+
+          /* Margin between each slide */
+          .testimonial-slider .slick-slide {
+            margin: 0 15px;
+          }
+
+          /* Prevent slides from overlapping */
+          .testimonial-slider .slick-track {
+            display: flex !important;
+            align-items: center;
+          }
+
+          /* Adjust the position of dots for the testimonial slider */
+          .testimonial-slider .slick-dots {
+            bottom: -30px;
+          }
+        `}
+      </style>
     </Box>
   );
 };
