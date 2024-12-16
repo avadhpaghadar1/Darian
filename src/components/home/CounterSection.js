@@ -13,7 +13,7 @@ const CounterSection = () => {
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        paddingY: 5,
+        paddingY: 3,
         marginY:3,
       }}
     >
@@ -36,10 +36,10 @@ const CounterSection = () => {
               >
                 <FontAwesomeIcon icon={faThumbsUp} size="3x" className="text-white" />
               </Box>
-              <Typography variant="h4" className="text-white my-4">Happy Clients</Typography>
+              <Typography variant="h5" className="text-white my-4">Happy Clients</Typography>
               <Box className="counter-counting d-flex justify-content-center align-items-center">
-                <Typography variant="h4" className="text-white fw-bold">456</Typography>
-                <Typography variant="h3" className="fw-bold text-white ms-2">+</Typography>
+                <Typography variant="h5" className="text-white fw-bold">456</Typography>
+                <Typography variant="h6" className="fw-bold text-white ms-2">+</Typography>
               </Box>
             </Box>
           </Grid>
@@ -61,10 +61,10 @@ const CounterSection = () => {
               >
                 <FontAwesomeIcon icon={faTruck} size="3x" className="text-white" />
               </Box>
-              <Typography variant="h4" className="text-white my-4">Transport</Typography>
+              <Typography variant="h5" className="text-white my-4">Transport</Typography>
               <Box className="counter-counting d-flex justify-content-center align-items-center">
-                <Typography variant="h4" className="text-white fw-bold">513</Typography>
-                <Typography variant="h3" className="fw-bold text-white ms-2">+</Typography>
+                <Typography variant="h5" className="text-white fw-bold">513</Typography>
+                <Typography variant="h6" className="fw-bold text-white ms-2">+</Typography>
               </Box>
             </Box>
           </Grid>
@@ -86,10 +86,10 @@ const CounterSection = () => {
               >
                 <FontAwesomeIcon icon={faUsers} size="3x" className="text-white" />
               </Box>
-              <Typography variant="h4" className="text-white my-4">Employees</Typography>
+              <Typography variant="h5" className="text-white my-4">Employees</Typography>
               <Box className="counter-counting d-flex justify-content-center align-items-center">
-                <Typography variant="h4" className="text-white fw-bold">53</Typography>
-                <Typography variant="h3" className="fw-bold text-white ms-2">+</Typography>
+                <Typography variant="h5" className="text-white fw-bold">53</Typography>
+                <Typography variant="h6" className="fw-bold text-white ms-2">+</Typography>
               </Box>
             </Box>
           </Grid>
@@ -111,10 +111,10 @@ const CounterSection = () => {
               >
                 <FontAwesomeIcon icon={faHeart} size="3x" className="text-white" />
               </Box>
-              <Typography variant="h4" className="text-white my-4">Years Experience</Typography>
+              <Typography variant="h5" className="text-white my-4">Years Experience</Typography>
               <Box className="counter-counting d-flex justify-content-center align-items-center">
-                <Typography variant="h4" className="text-white fw-bold">17</Typography>
-                <Typography variant="h3" className="fw-bold text-white ms-2">+</Typography>
+                <Typography variant="h5" className="text-white fw-bold">17</Typography>
+                <Typography variant="h6" className="fw-bold text-white ms-2">+</Typography>
               </Box>
             </Box>
           </Grid>

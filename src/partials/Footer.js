@@ -17,20 +17,20 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <Box
-      sx={{ bgcolor: "var(--bs-dark)", py: 5, color: "var(--bs-body)" }}
+      sx={{ bgcolor: "#0a244f", py: 5, color: "var(--bs-body)" }}
       className="footer"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{py:3}}>
         {/* Subscription Section */}
         <Grid container spacing={5} alignItems="center" mb={5}>
-          <Grid item xs={12} md={5}>
+          {/* <Grid item xs={12} md={5}>
             <Box
               display="flex"
               justifyContent={{ xs: "center", md: "flex-end" }}
               className="text-gray"
             >
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -44,7 +44,7 @@ const Footer = () => {
                 <FacebookIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -58,7 +58,7 @@ const Footer = () => {
                 <TwitterIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -72,7 +72,7 @@ const Footer = () => {
                 <InstagramIcon />
               </IconButton>
               <IconButton
-                color="secondary"
+                color="primary"
                 sx={{
                   mx: 1,
                   "&:hover": {
@@ -86,7 +86,7 @@ const Footer = () => {
                 <LinkedInIcon />
               </IconButton>
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         {/* Footer Content */}
@@ -97,26 +97,87 @@ const Footer = () => {
             <Typography
               variant="body2"
               gutterBottom
-              sx={{ lineHeight: "35px", color: "var(--bs-body)" }}
+              sx={{ lineHeight: "35px", color: "white" }}
             >
               Dolor amet sit justo amet elitr clita ipsum elitr est. Lorem ipsum
               dolor sit amet, consectetur adipiscing elit.
             </Typography> 
+            <Box
+              display="flex"
+              justifyContent={{ xs: "flex-start", md: "flex-start" }}
+              className="text-gray"
+            >
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <TwitterIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <InstagramIcon />
+              </IconButton>
+              <IconButton
+                color="primary"
+                sx={{
+                  me: 1,
+                  "&:hover": {
+                    backgroundColor: "var(--bs-white)",
+                  },
+                  "&:hover svg": {
+                    color: "var(--bs-primary)",
+                  },
+                }}
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </Box>
           </Grid>
 
           {/* Column 2: About Us Links */}
           <Grid item xs={12} md={3}>
             <Typography variant="h6" gutterBottom sx={{ color: "white" }}>
-              About Us
+              Pages
             </Typography>
             <Box>
               {[
-                "Why Choose Us",
-                "Free Water Bottles",
-                "Water Dispensers",
-                "Bottled Water Coolers",
+                "Home",
+                "Insulated Bottles",
+                "Other Product",
+                "About Us",
                 "Contact Us",
-                "Terms & Conditions",
               ].map((text, index) => (
                 <Link
                   href="#"
@@ -124,11 +185,10 @@ const Footer = () => {
                   sx={{
                     display: "block",
                     lineHeight: "35px",
-                    color: "var(--bs-body)",
+                    color: "white",
                     transition: "0.5s",
-                    mb: 1,
+                    textDecoration:"none",
                     "&:hover": {
-                      letterSpacing: "1px",
                       color: "var(--bs-primary)",
                     },
                   }}
@@ -145,7 +205,7 @@ const Footer = () => {
               Business Hours
             </Typography>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Mon - Friday:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -153,7 +213,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Saturday:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -161,7 +221,7 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box mb={3}>
-              <Typography variant="body2" sx={{ color: "var(--bs-body)" }}>
+              <Typography variant="body2" sx={{ color: "grey" }}>
                 Vacation:
               </Typography>
               <Typography variant="body2" sx={{ color: "white" }}>
@@ -176,23 +236,21 @@ const Footer = () => {
               Contact Info
             </Typography>
             {[
-              { icon: "fa-map-marker-alt", text: "123 Street, New York, USA" },
-              { icon: "fas fa-envelope", text: "info@example.com" },
-              { icon: "fas fa-envelope", text: "info@example.com" },
-              { icon: "fas fa-phone", text: "+012 345 67890" },
-              { icon: "fas fa-print", text: "+012 345 67890" },
+              { icon: "fa-map-marker-alt",link:"#", text: "Victoria Industrial Park, 17, Rd Number 5, near Kotak Mahindra Bank, Kathwada GIDC, Odhav Industrial Estate, Odhav, Ahmedabad, Kathwada, Gujarat 382430" },
+              { icon: "fas fa-envelope",link:"mailto:info@darianindustries.com", text: "info@darianindustries.com" },
+              { icon: "fas fa-phone",link:"tel:6354273453", text: "+91 63542 73453" },
             ].map((item, index) => (
               <Link
-                href="#"
+                href={item.link}
                 key={index}
                 sx={{
                   display: "block",
-                  lineHeight: "35px",
-                  color: "var(--bs-body)",
+                  lineHeight: "20px",
+                  color: "white",
                   transition: "0.5s",
-                  mb: 1,
+                  textDecoration:"none",
+                  mb: 2,
                   "&:hover": {
-                    letterSpacing: "1px",
                     color: "var(--bs-primary)",
                   },
                 }}
@@ -207,7 +265,7 @@ const Footer = () => {
       {/* Copyright Section */}
       <Box
         sx={{
-          bgcolor: "var(--bs-dark)",
+          bgcolor: "#0a244f",
           pt: 4,
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         }}
@@ -217,7 +275,7 @@ const Footer = () => {
           <Typography
             variant="body2"
             align="center"
-            sx={{ color: "var(--bs-body)" }}
+            sx={{ color: "white" }}
           >
             © {currentYear} Darian | All Rights Reserved.
           </Typography>
