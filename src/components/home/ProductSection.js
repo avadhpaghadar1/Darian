@@ -9,9 +9,9 @@ import {
   Button,
   Container,
 } from "@mui/material";
-import bottleOne from "../Vendors/image/bottle/image_one.jpg";
-import bottleTwo from "../Vendors/image/bottle/image_two.jpg";
-import bottleThree from "../Vendors/image/bottle/image_three.jpg";
+import bottleOne from "../../Vendors/image/bottle/image_one.jpg";
+import bottleTwo from "../../Vendors/image/bottle/image_two.jpg";
+import bottleThree from "../../Vendors/image/bottle/image_three.jpg";
 import { Link } from "react-router-dom";
 
 const bottles = [

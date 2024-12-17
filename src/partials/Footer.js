@@ -15,6 +15,8 @@ import logo from '../Vendors/image/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const instaLink = "https://www.instagram.com/darian_enterprise/profilecard/?igsh=cHFvcTl0ejByaHd0";
+  const linkdinLink = "https://in.linkedin.com/company/darian-enterprise";
   return (
     <Box
       sx={{ bgcolor: "#0a244f", py: 5, color: "var(--bs-body)" }}
@@ -136,6 +138,7 @@ const Footer = () => {
                 <TwitterIcon />
               </IconButton>
               <IconButton
+                href={instaLink}
                 color="primary"
                 sx={{
                   me: 1,
@@ -147,9 +150,10 @@ const Footer = () => {
                   },
                 }}
               >
-                <InstagramIcon />
+                <InstagramIcon  />
               </IconButton>
               <IconButton
+                href={linkdinLink}
                 color="primary"
                 sx={{
                   me: 1,

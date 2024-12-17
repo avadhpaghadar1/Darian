@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
 import Banner from "../components/common/Banner";
+import ProductSection from "../components/home/ProductSection";
 
 const InsulatedBottle = () => {
   return (
@@ -7,6 +7,7 @@ const InsulatedBottle = () => {
         <Banner
         title="Insulated Bottle"
       />
+      <ProductSection />
     </div>
   )
 };
