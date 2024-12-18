@@ -41,7 +41,10 @@ const Navbar = () => {
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: scrolled ? "#fff" : "#0a244f",
+        backgroundColor: scrolled
+          ? "rgba(255, 255, 255, 0.7)"
+          : "rgba(10, 36, 79,1)",
+        backdropFilter: "blur(16px)",
         boxShadow: scrolled ? "0px 2px 4px rgba(0, 0, 0, 0.1)" : "none",
         transition: "background-color 0.3s ease, box-shadow 0.3s ease",
         padding: "10px 20px",
@@ -50,10 +53,11 @@ const Navbar = () => {
         textTransform: "uppercase",
       }}
     >
+
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         {/* Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <img src={logo} alt="Logo" style={{ height: 80 }} />
+          <img src={logo} alt="Logo" style={{ height: 70 }} />
         </Box>
 
         {isMobile ? (
@@ -73,7 +77,7 @@ const Navbar = () => {
                   position: "fixed",
                   top: "90px",
                   left: 0,
-                  right:0,
+                  right: 0,
                   width: "100%",
                   backgroundColor: "#0a244f",
                   boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
@@ -122,8 +126,8 @@ const Navbar = () => {
                       location.pathname === item.link
                         ? "#00c8ff"
                         : scrolled
-                        ? "#102a43"
-                        : "#fff",
+                          ? "#102a43"
+                          : "#fff",
                     textDecoration: "none",
                     fontSize: "16px",
                     fontWeight: location.pathname === item.link ? "bold" : "500",
