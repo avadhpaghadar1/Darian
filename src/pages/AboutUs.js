@@ -1,4 +1,7 @@
-import { Typography } from "@mui/material";
+
+import Blog from "../components/aboutus/Blog";
+import DeliverProduct from "../components/aboutus/DeliverProduct";
+import Service from "../components/aboutus/Service";
 import Banner from "../components/common/Banner";
 
 const AboutUs = () => {
@@ -7,6 +10,9 @@ const AboutUs = () => {
       <Banner
         title="About Us"
       />
+      <DeliverProduct />
+      <Service />
+      <Blog />
     </div>
   )
 };

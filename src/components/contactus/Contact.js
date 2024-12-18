@@ -236,10 +236,11 @@ const Contact = () => {
                   borderRadius: "8px",
                   backgroundColor: "white",
                   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+                  
                 }}
               >
                 <MailOutline
-                  sx={{ color: "#00bfff", fontSize: "40px", marginRight: 2 }}
+                  sx={{ color: "#00bfff", fontSize: "40px", marginRight: { md: 1, sm: 2 }}}
                 />
                 <Box>
                   <Typography
@@ -274,7 +275,7 @@ const Contact = () => {
                 }}
               >
                 <Phone
-                  sx={{ color: "#00bfff", fontSize: "40px", marginRight: 2 }}
+                  sx={{ color: "#00bfff", fontSize: "40px",  marginRight: { md: 1, sm: 2 } }}
                 />
                 <Box>
                   <Typography

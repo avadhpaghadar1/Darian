@@ -7,7 +7,7 @@ import teamThree from "../../Vendors/image/team-3.jpg";
 import teamFour from "../../Vendors/image/team-4.jpg";
 
 const teamMembers = [
-  { name: "Dipesh Bhuva", role: "CFO & Founder", imgSrc: teamOne, delay: "0.2s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
+  { name: "Dipesh Bhuva", role: "CFO & Founder", imgSrc: teamOne, delay: "0.2s",phone:"tel:+91 6354 273 453",facebook:"https://www.facebook.com/oubrCYHDhEdMYCYe" },
   { name: "Pritesh Bhuva", role: "CEO", imgSrc: teamTwo, delay: "0.4s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
   { name: "Ankit Vaghasiya", role: "CIO", imgSrc: teamThree, delay: "0.6s",phone:"tel:+919999999999",facebook:"www.facebook.com" },
   { name: "Gopal Boghra", role: "COO", imgSrc: teamFour, delay: "0.8s",phone:"tel:+919999999999",facebook:"www.facebook.com" },

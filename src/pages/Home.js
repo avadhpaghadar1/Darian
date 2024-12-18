@@ -2,9 +2,10 @@
 import Carousel from "../components/home/Carousel";
 import CounterSection from "../components/home/CounterSection";
 import Features from "../components/home/Features";
+import ProductSection from "../components/home/ProductSection";
 import TeamSection from "../components/home/TeamSection";
 import Testimonial from "../components/home/Testimonial";
-import ProductSection from "../components/ProductSection";
+
 
 const Home = () => {
   return (
